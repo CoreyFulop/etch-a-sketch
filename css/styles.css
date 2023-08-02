@@ -29,3 +29,7 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+
+.grid-square {
+    transition: 0.5s;
+}

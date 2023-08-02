@@ -12,9 +12,18 @@ function createGrid(squaresPerSide, sideLength, gridContainer) {
         square.style.height = `${sideLength/squaresPerSide}px`;
         square.style.width = `${sideLength/squaresPerSide}px`;
         square.style.backgroundColor = "#eeeeee";
+        square.classList.add("grid-square");
         square.setAttribute("id", `square-${i}`);
         gridContainer.appendChild(square);
     }
 }
 
-createGrid(16, primaryLength, sketchContainer);
+function changeColour(e) {
+    let targetSquare = e.target;
+    targetSquare.style.backgroundColor = "black";
+}
+
+createGrid(100, primaryLength, sketchContainer);
+
+const gridSquares = Array.from(document.querySelectorAll(".grid-square"));
+gridSquares.forEach(gridSquare => gridSquare.addEventListener("mouseover", changeColour));
