@@ -12,4 +12,20 @@ html,
 body {
     margin: 0;
     padding: 0;
+    background-color: #ff0040;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sketch-container {
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
 }
