@@ -23,7 +23,24 @@ function changeColour(e) {
     targetSquare.style.backgroundColor = "black";
 }
 
-createGrid(100, primaryLength, sketchContainer);
+function resetGrid() {
+    let inputSideLengthString = prompt("Enter the number of squares on each side of the grid (1-100): ");
+    let inputSideLength = Math.floor(+inputSideLengthString);
+    if (inputSideLength > 100) {
+        inputSideLength = 100; // limit number of squares to conserve computer resources
+    } else if (inputSideLength < 1) {
+        inputSideLength = 16; // stop zero or negative number of squares along each side
+    }
+    sketchContainer.textContent = "";
+    createGrid(inputSideLength, primaryLength, sketchContainer);
+    const gridSquares = Array.from(document.querySelectorAll(".grid-square"));
+    gridSquares.forEach(gridSquare => gridSquare.addEventListener("mouseover", changeColour));
+}
+
+createGrid(16, primaryLength, sketchContainer);
 
 const gridSquares = Array.from(document.querySelectorAll(".grid-square"));
 gridSquares.forEach(gridSquare => gridSquare.addEventListener("mouseover", changeColour));
+
+const newGridButton = document.querySelector("#new-grid");
+newGridButton.addEventListener("click", resetGrid);

@@ -21,6 +21,38 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+body div h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: azure;
+    transition: 0.5s;
+}
+
+body div h1:hover {
+    color: black;
+}
+
+#new-grid {
+    font-size: medium;
+    padding: 10px;
+    border-color: azure;
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+#new-grid:hover {
+    background-color: black;
+    color: antiquewhite;
 }
 
 .sketch-container {
@@ -32,4 +64,12 @@ body {
 
 .grid-square {
     transition: 0.5s;
+}
+
+.footer-container {
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: azure;
 }
