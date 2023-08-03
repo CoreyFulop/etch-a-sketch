@@ -1,5 +1,9 @@
 "use strict"
 
+function randomInt() {
+    return Math.floor(Math.random() * 255); // random int in range 0 - 255 
+}
+
 // the dimensions of the sketch surface is 600px x 600px
 const primaryLength = 600;
 
@@ -20,7 +24,7 @@ function createGrid(squaresPerSide, sideLength, gridContainer) {
 
 function changeColour(e) {
     let targetSquare = e.target;
-    targetSquare.style.backgroundColor = "black";
+    targetSquare.style.backgroundColor = `rgb(${randomInt()},${randomInt()},${randomInt()})`;
 }
 
 function resetGrid() {
